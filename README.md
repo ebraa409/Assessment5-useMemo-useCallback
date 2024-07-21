@@ -1,79 +1,40 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Assessment 4: useMemo & useCallback
 
-# Getting Started
+## About The Assessment
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+**Objective:** To assess understanding and practical implementation of the `useMemo` and `useCallback` hooks.
 
-## Step 1: Start the Metro Server
+**Tasks:**
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+1. Optimize a list rendering application to prevent unnecessary re-renders using `useMemo`.
+2. Implement a search filter feature and optimize its performance using `useCallback`.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## How to run the application
 
-```bash
-# using npm
-npm start
+- Open up the project in vsCode
+- run npx react-native start to start the server
+- Open Android Studio, open the applications directory
+- Run the app
 
-# OR using Yarn
-yarn start
-```
+## Features
 
-## Step 2: Start your Application
+- utilizing useMemo to prevent rerenders
+- search filter feature using useCallback
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Demo
 
-### For Android
+[Demo]()
 
-```bash
-# using npm
-npm run android
+### Preview
 
-# OR using Yarn
-yarn android
-```
+#### useMemo list rendering (console log example)
 
-### For iOS
+Included a console log inside the useMemo function so that we can see in our terminal if useMemo is rerendering. In our case, it should display the console log only once and it wont be affected by a change in state.
 
-```bash
-# using npm
-npm run ios
+Terminal Example below:
 
-# OR using Yarn
-yarn ios
-```
+![listRender](https://i.imgur.com/6nNDCAi.gif)
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+#### search filter
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+![videoPlayerGif](https://i.imgur.com/VloFyBG.gif)
