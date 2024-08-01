@@ -18,7 +18,6 @@ const List = () => {
   const [filteredData, setFilteredData] = useState(data)
 
 
-
     const renderItem = ({item}) => {
       return (
         <View>
@@ -29,7 +28,13 @@ const List = () => {
       )
     }
 
-    const memoizedData = useMemo(() => renderItem,[searchQuery, data])
+    const memoizedData = useMemo(() => {
+      if (searchQuery == '') {
+        return data
+      } else {
+        return filteredData
+      }
+    }, [data, filteredData])
 
     const handleSearch = useCallback((query) => {
       setSearchQuery(query)
@@ -42,7 +47,7 @@ const List = () => {
         setFilteredData(data.filter(item => item.title.toLowerCase().includes(query.toLowerCase())))
         
       }
-    }, [data])
+    }, [filteredData, data])
        
 
     return (
@@ -53,7 +58,7 @@ const List = () => {
             <Text>{}</Text>
             <TextInput placeholder="What task are you looking for?" value={searchQuery} onChangeText={handleSearch} style={styles.input}/>
             <Text style={styles.textSize}>This is The List</Text>
-            <FlatList data={filteredData} renderItem={memoizedData} keyExtractor={item => item.id}/>
+            <FlatList data={memoizedData} renderItem={renderItem} keyExtractor={item => item.id}/>
         </View>
     )
 }
